@@ -35,14 +35,6 @@ void Phonebook::add_contact()
 		this->n++;
 }
 
-bool check_number(std::string str)
-{
-	for (int i = 0; i < str.length(); i++)
-		if (isdigit(str[i]) == false)
-			return false;
-	return true;
-}
-
 void Phonebook::search_contact() const
 {
 	if (this->n == 0)
