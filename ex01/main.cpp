@@ -1,17 +1,7 @@
 #include "Phonebook.hpp"
 
-int main()
+int main(void)
 {
-	// Contact c = Contact();
-
-	// c.setFirstName("mok");
-	// c.display();
-	// Phonebook p;
-
-	// printf("%d\n", p.getN());
-	// p.add_contact();
-	// p.search_contact();
-
 	Phonebook phonebook;
 	std::string input;
 
