@@ -1,10 +1,10 @@
-NAME=phonebook
+NAME=account
 
-SRC= Contact.cpp Phonebook.cpp main.cpp
+SRC= Account.cpp tests.cpp
 OBJ= $(SRC:%.cpp=%.o)
 
 CC= clang++
-CFLAGS= -Wall -Werror -Wextra
+CFLAGS= -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
@@ -15,9 +15,9 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm $(OBJ)
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	rm $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all

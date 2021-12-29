@@ -2,7 +2,7 @@
 #define PHONEBOOK_H
 
 #include "Contact.hpp"
-
+#include <sstream>
 class Phonebook
 {
 	Contact contactList[8];
