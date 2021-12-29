@@ -37,8 +37,8 @@ Account::Account( int initial_deposit ) : _amount(initial_deposit)
 }
 
 Account::Account(void) : _accountIndex(this->_nbAccounts), _amount(0),
-_nbDeposits(0), _nbWithdrawals(0) {
-
+_nbDeposits(0), _nbWithdrawals(0)
+{
 	this->_nbAccounts += 1;
 
 	this->_displayTimestamp();
@@ -48,8 +48,8 @@ _nbDeposits(0), _nbWithdrawals(0) {
 	<< std::endl;
 }
 
-Account::~Account(void) {
-
+Account::~Account(void)
+{
 	this->_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 	<< ";amount:" << this->_amount
@@ -128,8 +128,8 @@ int		Account::checkAmount( void ) const
 	return (_amount);
 }
 
-void	Account::displayStatus(void) const {
-
+void	Account::displayStatus(void) const
+{
 	this->_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 	<< ";amount:" << this->_amount
