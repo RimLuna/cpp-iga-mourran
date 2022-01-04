@@ -1,60 +1,61 @@
 #include "Contact.hpp"
 
-std::string	Contact::getFirstName() const
+std::string Contact::get_firstname() const
 {
-	return (this->firstName);
+	return (this->_firstname);
 }
 
-std::string	Contact::getLastName() const
+std::string Contact::get_lastname() const
 {
-	return (this->lastName);
+	return (this->_lastname);
 }
 
-std::string	Contact::getNickname() const
+std::string Contact::get_nickname() const
 {
-	return (this->nickname);
+	return (this->_nickname);
 }
 
-std::string	Contact::getPhoneNumber() const
+std::string Contact::get_number() const
 {
-	return (this->phoneNumber);
+	return (this->_number);
 }
 
-std::string	Contact::getDarkestSecret() const
+std::string Contact::get_secret() const
 {
-	return (this->darkestSecret);
+	return (this->_secret);
 }
 
-void	Contact::setFirstName(std::string firstName)
+void Contact::set_firstname(std::string _firstname)
 {
-	this->firstName = firstName;
+	this->_firstname = _firstname;
 }
 
-void	Contact::setLastName(std::string lastName)
+void Contact::set_lastname(std::string _lastname)
 {
-	this->lastName = lastName;
+	this->_lastname = _lastname;
 }
 
-void	Contact::setNickname(std::string nickName)
+void Contact::set_nickname(std::string _nickname)
 {
-	this->nickname = nickName;
+	this->_nickname = _nickname;
 }
 
-void	Contact::setPhoneNumber(std::string phoneNumber)
+void Contact::set_number(std::string _number)
 {
-	this->phoneNumber = phoneNumber;
+	this->_number = _number;
 }
 
-void	Contact::setDarkestSecret(std::string darkestSecret)
+void Contact::set_secret(std::string _secret)
 {
-	this->darkestSecret = darkestSecret;
+	this->_secret = _secret;
 }
 
-void	Contact::display() const {
+void Contact::display() const
+{
 
-	std::cout << "First name : " << this->firstName << std::endl;
-	std::cout << "Last name : " <<  this->lastName << std::endl;
-	std::cout << "Nickname : " << this->nickname << std::endl;
-	std::cout << "Phone number : " << this->phoneNumber << std::endl;
-	std::cout << "Darkest secret : " << this->darkestSecret << std::endl;
+	std::cout << "First name : " << this->_firstname << std::endl;
+	std::cout << "Last name : " << this->_lastname << std::endl;
+	std::cout << "_nickname : " << this->_nickname << std::endl;
+	std::cout << "Phone number : " << this->_number << std::endl;
+	std::cout << "Darkest secret : " << this->_secret << std::endl;
 }

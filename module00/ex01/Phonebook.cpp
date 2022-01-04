@@ -14,23 +14,23 @@ void Phonebook::add_contact()
 
 	std::cout << "First Name : ";
 	std::getline(std::cin, s);
-	this->contactList[this->n % 8].setFirstName(s);
+	this->contactList[this->n % 8].set_firstname(s);
 
 	std::cout << "Last Name : ";
 	std::getline(std::cin, s);
-	this->contactList[this->n % 8].setLastName(s);
+	this->contactList[this->n % 8].set_lastname(s);
 
 	std::cout << "Nickame : ";
 	std::getline(std::cin, s);
-	this->contactList[this->n % 8].setNickname(s);
+	this->contactList[this->n % 8].set_nickname(s);
 
 	std::cout << "Phone Number : ";
 	std::getline(std::cin, s);
-	this->contactList[this->n % 8].setPhoneNumber(s);
+	this->contactList[this->n % 8].set_number(s);
 
 	std::cout << "Darkest Secret : ";
 	std::getline(std::cin, s);
-	this->contactList[this->n % 8].setDarkestSecret(s);
+	this->contactList[this->n % 8].set_secret(s);
 	if (n < 8)
 		this->n++;
 }
@@ -49,15 +49,15 @@ void Phonebook::search_contact() const
 			  << "|";
 	std::cout << std::setw(10) << "Last Name"
 			  << "|";
-	std::cout << std::setw(10) << "Nickname"
+	std::cout << std::setw(10) << "_nickname"
 			  << "|" << std::endl;
 	std::cout << "     ---------------------------------------" << std::endl;
 	for (int i = 0; i < this->n; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << "|";
-		std::cout << std::setw(10) << this->format_column(this->contactList[i].getFirstName()) << "|";
-		std::cout << std::setw(10) << this->format_column(this->contactList[i].getLastName()) << "|";
-		std::cout << std::setw(10) << this->format_column(this->contactList[i].getNickname()) << "|" << std::endl;
+		std::cout << std::setw(10) << this->format_column(this->contactList[i].get_firstname()) << "|";
+		std::cout << std::setw(10) << this->format_column(this->contactList[i].get_lastname()) << "|";
+		std::cout << std::setw(10) << this->format_column(this->contactList[i].get_nickname()) << "|" << std::endl;
 	}
 	std::cout << "     ---------------------------------------" << std::endl;
 	std::string input;
