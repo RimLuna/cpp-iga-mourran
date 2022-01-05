@@ -3,7 +3,7 @@
 
 Phonebook::Phonebook() : n(0) {}
 
-int Phonebook::getN() const
+int Phonebook::get_n() const
 {
 	return (this->n);
 }

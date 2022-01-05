@@ -11,7 +11,7 @@ class Phonebook
 
 public:
 	Phonebook();
-	int getN() const;
+	int get_n() const;
 	void add_contact();
 	void search_contact() const;
 };
