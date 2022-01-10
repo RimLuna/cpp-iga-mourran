@@ -15,6 +15,7 @@ public:
 
 	void attack(const std::string &target);
 	void guardGate();
+	friend std::ostream &operator<<(std::ostream &out, ScavTrap const &scavTrap);
 };
 
 #endif

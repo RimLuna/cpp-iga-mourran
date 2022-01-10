@@ -3,16 +3,11 @@
 ScavTrap::ScavTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	_name = "Nameless";
-	_hitpoints = 100;
-	_energy_points = 50;
-	_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(const std::string &name)
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
-	_name = name;
 	_hitpoints = 100;
 	_energy_points = 50;
 	_attack_damage = 20;
@@ -29,15 +24,17 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap destructor of " << _name << " called" << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &a)
+ScavTrap &ScavTrap::operator=(const ScavTrap &o)
 {
-	_name = a.get_name();
-	_hitpoints = a.get_hitpoints();
-	_energy_points = a.get_energy_points();
-	_attack_damage = a.get_attack_damage();
+	if (this != &o)
+	{
+		std::cout << "ScavTrap assignement operator called" << std::endl;
+		this->_hitpoints = o._hitpoints;
+		this->_energy_points = o._energy_points;
+		this->_attack_damage = o._attack_damage;
+	}
 	return *this;
 }
-
 void ScavTrap::attack(const std::string &target)
 {
 	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
@@ -46,4 +43,11 @@ void ScavTrap::attack(const std::string &target)
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << _name << " have enterred in Gate keeper mode" << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &out, ScavTrap const &scavTrap)
+{
+	out << "Name: " << scavTrap._name << ", Hitpoints: " << scavTrap._hitpoints
+		<< ", Energy Points: " << scavTrap._energy_points << ", Attack Damage: " << scavTrap._attack_damage << std::endl;
+	return out;
 }

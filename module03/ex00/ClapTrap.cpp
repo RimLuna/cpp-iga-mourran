@@ -1,55 +1,39 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
-	: _name("Nameless"), _hitpoints(10), _energy_points(10), _attack_damage(0)
+	: _name(""), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &a)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = a;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
 	: _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor of " << _name << " called" << std::endl;
+	std::cout << "ClapTrap destructor of " << _name << " called" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &a)
+ClapTrap &ClapTrap::operator=(const ClapTrap &o)
 {
-	_name = a.get_name();
-	_hitpoints = a.get_hitpoints();
-	_energy_points = a.get_energy_points();
-	_attack_damage = a.get_attack_damage();
+	if (this != &o)
+	{
+		std::cout << "ClapTrap assignement operator called" << std::endl;
+		this->_name = o._name;
+		this->_hitpoints = o._hitpoints;
+		this->_energy_points = o._energy_points;
+		this->_attack_damage = o._attack_damage;
+	}
 	return *this;
-}
-
-const std::string &ClapTrap::get_name(void) const
-{
-	return _name;
-}
-
-unsigned int ClapTrap::get_hitpoints(void) const
-{
-	return _hitpoints;
-}
-
-unsigned int ClapTrap::get_energy_points(void) const
-{
-	return _energy_points;
-}
-
-unsigned int ClapTrap::get_attack_damage(void) const
-{
-	return _attack_damage;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -60,7 +44,15 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	_hitpoints = (_hitpoints < amount) ? 0 : _hitpoints - amount;
+	_hitpoints = _hitpoints < 0 ? 0 : _hitpoints;
 	std::cout << "ClapTrap " << _name << " took " << amount << " damage, hit points to " << _hitpoints << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &out, ClapTrap const &clapTrap)
+{
+	out << "Name: " << clapTrap._name << ", Hitpoints: " << clapTrap._hitpoints
+		<< ", Energy Points: " << clapTrap._energy_points << ", Attack Damage: " << clapTrap._attack_damage << std::endl;
+	return out;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
