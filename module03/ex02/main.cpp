@@ -1,21 +1,18 @@
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 int main()
 {
-	FragTrap a;
-	std::cout << "hitpoints: " << a.get_hitpoints() << std::endl;
-	std::cout << "energyPoints: " << a.get_energy_points() << std::endl;
-	std::cout << "attackDamage: " << a.get_attack_damage() << std::endl;
-	a.takeDamage(3);
-	FragTrap b(a);
-	b.takeDamage(3);
-	FragTrap c;
-	c = b;
-	b.takeDamage(3);
+	FragTrap fragTrap("Innak");
+	std::cout << fragTrap;
 
-	FragTrap d("ikhane");
-	d.attack("ibzdane");
-	d.takeDamage(4);
-	d.beRepaired(10);
-	d.highFivesGuys();
+	fragTrap.attack("Enemy");
+	fragTrap.beRepaired(5);
+	fragTrap.takeDamage(10);
+
+	std::cout << fragTrap << std::endl;
+	fragTrap.highFivesGuys();
+
+	fragTrap.takeDamage(200);
+	std::cout << fragTrap;
 }

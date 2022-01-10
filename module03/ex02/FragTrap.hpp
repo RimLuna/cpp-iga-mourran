@@ -15,6 +15,7 @@ public:
 
 	void attack(const std::string &target);
 	void highFivesGuys(void);
+	friend std::ostream &operator<<(std::ostream &out, FragTrap const &fragTrap);
 };
 
 #endif
