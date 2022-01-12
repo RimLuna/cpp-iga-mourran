@@ -4,7 +4,7 @@ SRC			=	HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 
 OBJS		=	$(SRC:.cpp=.o)
 
-COMPILE		=	clang++
+COMPILE		=	g++
 
 FLAGS		=	-Wall -Wextra -Werror
 

@@ -4,7 +4,7 @@ SRC			=	main.cpp Karen.cpp
 
 OBJS		=	$(SRC:.cpp=.o)
 
-COMPILE		=	clang++
+COMPILE		=	g++
 
 FLAGS		=	-Wall -Wextra -Werror
 

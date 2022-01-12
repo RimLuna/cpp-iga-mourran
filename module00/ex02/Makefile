@@ -3,7 +3,7 @@ NAME=account
 SRC= Account.cpp tests.cpp
 OBJ= $(SRC:%.cpp=%.o)
 
-CC= clang++
+CC= g++
 CFLAGS= -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
