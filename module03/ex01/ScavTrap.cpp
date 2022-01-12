@@ -21,7 +21,7 @@ ScavTrap::ScavTrap(const ScavTrap &o) : ClapTrap(o)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor of " << _name << " called" << std::endl;
+	std::cout << "ScavTrap destructor of called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &o)

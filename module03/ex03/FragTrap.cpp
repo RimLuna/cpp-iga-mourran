@@ -26,7 +26,7 @@ FragTrap::FragTrap(const FragTrap &o) : ClapTrap(o)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor of " << _name << " called" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &o)

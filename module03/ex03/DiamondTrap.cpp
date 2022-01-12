@@ -21,16 +21,8 @@ DiamondTrap::~DiamondTrap(void)
 DiamondTrap &DiamondTrap::operator=(DiamondTrap &o)
 {
 	std::cout << "DiamondTrap copy assignment operator." << std::endl;
-	swap(*this, o);
+	*this = o;
 	return *this;
-}
-
-void swap(DiamondTrap &first, DiamondTrap &second)
-{
-	using std::swap;
-
-	swap(first._name, second._name);
-	swap(first._name, second._name);
 }
 
 void DiamondTrap::whoAmI(void)

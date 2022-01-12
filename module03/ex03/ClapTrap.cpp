@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const std::string &name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destructor of " << _name << " called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &o)
