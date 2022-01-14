@@ -16,4 +16,5 @@ int main()
 	delete i;
 	delete j;
 	delete meta;
+	Animal *WrongCat = new Dog();
 }
